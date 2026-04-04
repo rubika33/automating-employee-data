@@ -66,6 +66,10 @@ mgr.query();
 if (mgr.next()) {
     target.manager = mgr.sys_id;
 }
-<img width="1920" height="1080" alt="Screenshot (93)" src="https://github.com/user-attachments/assets/f00d78f0-eee4-409a-89b9-e9cdbc843a0a" /><img width="1920" height="1080" alt="Screenshot (95)" src="https://github.com/user-attachments/assets/f6fe34f7-6672-44c3-88be-3b2b4172b192" />
-<img width="1920" height="1080" alt="Screenshot (94)" src="https://github.com/user-attachments/assets/5988fd4d-374d-4085-99cb-841b798a2f73" />
+```
+![Screenshot 93](https://github.com/user-attachments/assets/f00d78f0-eee4-409a-89b9-e9cdbc843a0a)
+
+![Screenshot 95](https://github.com/user-attachments/assets/f6fe34f7-6672-44c3-88be-3b2b4172b192)
+
+![Screenshot 94](https://github.com/user-attachments/assets/5988fd4d-374d-4085-99cb-841b798a2f73)
 
