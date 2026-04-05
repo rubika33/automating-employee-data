@@ -1,74 +1,73 @@
-🚀 AUTOMATING EMPLOYEE DATA USING SERVICENOW
-📌 PROJECT DESCRIPTION
+# 🚀 Automating Employee Data using ServiceNow
 
-This project focuses on automating employee data management using ServiceNow.
-It eliminates manual data entry by importing employee details from an external Excel/CSV file and automatically mapping them into the system.
+## 📌 Project Description
+This project focuses on automating employee data management using ServiceNow. It eliminates manual data entry by importing employee details from an Excel file and automatically mapping them into the system.
 
-The project uses Import Sets and Transform Maps to move data into the sys_user table efficiently.
+The project uses Import Sets and Transform Maps to move data into the **sys_user** table efficiently.
 
-🎯 OBJECTIVE
+---
 
-• Automate employee data entry
-• Reduce manual errors and duplication
-• Improve efficiency in data management
-• Map employee manager using reference field
-• Ensure accurate and structured data storage
+## 🎯 Objective
+- Automate employee data entry  
+- Reduce manual errors  
+- Improve data management efficiency  
+- Map employee manager using reference field  
 
-🛠️ TECHNOLOGIES USED
+---
 
-• ServiceNow
-• Import Sets
-• Transform Maps
-• GlideRecord (Scripting)
-• Excel / CSV
+## ⚙️ Technologies Used
+- ServiceNow  
+- Import Sets  
+- Transform Maps  
+- Excel (CSV file)  
 
-✨ KEY HIGHLIGHTS
+---
 
-• Automated employee onboarding process
-• Dynamic field mapping using Transform Maps
-• Manager mapping using scripting logic
-• Bulk data processing capability
-• Scalable and reusable solution
+## 🧩 Project Workflow
 
-🧩 PROJECT WORKFLOW
-1. Prepare Excel File
+### 1. Prepare Excel File
+Created an Excel sheet with the following fields:
+- Name  
+- Email  
+- Department  
+- Manager Email  
 
-Create an Excel file with:
-• Name
-• Email
-• Department
-• Manager
-• Manager Email
+---
 
-2. Load Data into ServiceNow
+### 2. Load Data into ServiceNow
+- Opened **System Import Sets → Load Data**  
+- Uploaded the Excel file  
+- Created a staging table: `Import Employee`  
 
-• Go to: System Import Sets → Load Data
-• Upload the file
-• A staging table is created automatically
+---
 
-3. Verify Imported Data
+### 3. Verify Imported Data
+- Viewed the imported data in the import table  
+- Used **Personalize List** to display required fields  
 
-• Open the staging table
-• Check imported records
-• Use Personalize List to view fields
+---
 
-4. Create Transform Map
+### 4. Create Transform Map
+- Mapped staging table fields to the **User (sys_user)** table  
+- Field mappings:
+  - Name → name  
+  - Email → email  
+  - Department → department  
 
-• Map staging table fields to sys_user
+---
 
-Field Mapping:
-• Name → name
-• Email → email
-• Department → department
-• Manager → manager
+### 5. Manager Field Mapping (Reference Field)
 
-5. Manager Mapping (Reference Field)
+Used the following script to map the manager based on email:
+
+```javascript
 var mgr = new GlideRecord('sys_user');
 mgr.addQuery('email', source.u_manager_email);
 mgr.query();
 if (mgr.next()) {
     target.manager = mgr.sys_id;
 }
+```
 📸 SCREENSHOTS
 
 ![Screenshot 92](https://github.com/user-attachments/assets/c27d8e49-21e8-4c5c-9788-4a95c4c6220e)
