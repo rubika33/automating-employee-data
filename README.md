@@ -1,13 +1,13 @@
-# 🚀 Automating Employee Data using ServiceNow
+#  Automating Employee Data using ServiceNow
 
-## 📌 Project Description
+##  Project Description
 This project focuses on automating employee data management using ServiceNow. It eliminates manual data entry by importing employee details from an Excel file and automatically mapping them into the system.
 
 The project uses Import Sets and Transform Maps to move data into the **sys_user** table efficiently.
 
 ---
 
-## 🎯 Objective
+##  Objective
 - Automate employee data entry  
 - Reduce manual errors  
 - Improve data management efficiency  
@@ -15,7 +15,7 @@ The project uses Import Sets and Transform Maps to move data into the **sys_user
 
 ---
 
-## ⚙️ Technologies Used
+##  Technologies Used
 - ServiceNow  
 - Import Sets  
 - Transform Maps  
@@ -23,13 +23,14 @@ The project uses Import Sets and Transform Maps to move data into the **sys_user
 
 ---
 
-## 🧩 Project Workflow
+##  Project Workflow
 
 ### 1. Prepare Excel File
 Created an Excel sheet with the following fields:
 - Name  
 - Email  
-- Department  
+- Department
+- Manager
 - Manager Email  
 
 ---
@@ -37,7 +38,7 @@ Created an Excel sheet with the following fields:
 ### 2. Load Data into ServiceNow
 - Opened **System Import Sets → Load Data**  
 - Uploaded the Excel file  
-- Created a staging table: `Import Employee`  
+- Created a staging table: `Import Employee5`  
 
 ---
 
@@ -52,7 +53,8 @@ Created an Excel sheet with the following fields:
 - Field mappings:
   - Name → name  
   - Email → email  
-  - Department → department  
+  - Department → department
+  - Manager -> manager
 
 ---
 
@@ -68,6 +70,10 @@ if (mgr.next()) {
 }
 ```
 ![Screenshot 92](https://github.com/user-attachments/assets/c27d8e49-21e8-4c5c-9788-4a95c4c6220e)
+
+![Screenshot ss2](https://github.com/user-attachments/assets/f4988bc8-8abd-4959-9247-00bffca731f6)
+![Screenshot ss3 ](https://github.com/user-attachments/assets/08ae41a8-0219-4079-920b-aaf6b68b91a3)
+
 
 ![Screenshot 93](https://github.com/user-attachments/assets/f00d78f0-eee4-409a-89b9-e9cdbc843a0a)
 
